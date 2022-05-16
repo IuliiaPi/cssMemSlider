@@ -20,11 +20,9 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     font-style: normal;
     font-weight: 400;
-    font-size: 18px;
-    /* line-height: 130%; */
-    line-height: 1.6;
+    font-size: 1.2rem;
+    line-height: 130%;
     letter-spacing: 0.06em;
-    /* text-align: center; */
     color: #afcbe3;
     background-color: var(--body_background-color);
     display: flex;
@@ -43,18 +41,16 @@ body {
     overflow: hidden;
 
     /* max-width: 1200px; */
-    /* margin: 0 auto; */
+    margin: 0 auto;
     /* padding: 0px 15px; */
 
-    margin: 30px 25px;
-
+    margin: 2rem;
 }
 
 .images {
     display: flex;
     width: 100%;
-    /* max-width: 800px; */
-    /* max-height: 600px; */
+    margin-bottom: 1rem;
 }
 
 .responsive {
@@ -67,47 +63,94 @@ body {
     display: none;
 }
 
+.footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
 .buttons {
     display: flex;
     justify-content: end;
 }
 
-.buttons label {
-    height: 40px;
-    width: 40px;
+.buttons .label {
+    display: block;
+    padding: 0 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 0 0.1rem;
+    /* background-color: var(--button_background-color); */
+}
+
+.btn {
+    display: block;
+    padding: 0.6rem;
     border-radius: 50%;
-    border: 4px solid var(--button_background-color);
+    border: 0.2rem solid var(--button_background-color);
+    /* border: 0.2rem solid transparent; */
     cursor: pointer;
     transition: all 0.3s ease;
 
-    margin: 20px 10px 20px 5px;
     background-color: var(--button_background-color);
 }
 
-.buttons label:hover {
+.btn:hover {
     background-color: var(--button-hover_background-color);
-    border: 4px solid var(--button-hover_background-color);
+    /* border: 0.2rem solid transparent; */
+    border: 0.2rem solid var(--button-hover_background-color);
 }
 
-#text_2 {
+.buttons .label:hover~.btn:hover {
+
+    /* background-color: transparent; */
+    /* border: 0.2rem solid transparent; */
+    /* background-color: var(--button-hover_background-color); */
+    /* border: 0.2rem solid transparent; */
+    /* border: 0.2rem solid var(--button-hover_background-color); */
+}
+
+.text {
     visibility: hidden;
+}
+
+#text_1 {
+    visibility: visible;
+}
+
+.btn1 {
+    background-color: var(--body_background-color);
+    border: 0.2rem solid var(--button_background-color);  
+}
+#text_2 {
+    /* visibility: hidden; */
 }
 
 #img_1:checked~.slider_1 {
     margin-left: 0;
 }
 
-#img_1:checked~#img_11 {
+#img_1:checked~.footer .buttons #btn_1 .btn1 {
     background-color: var(--body_background-color);
-    border: 4px solid var(--button_background-color);
+    border: 0.2rem solid var(--button_background-color);
 }
+
+/* .btn1:checked {
+    background-color: var(--body_background-color);
+    border: 0.2rem solid var(--button_background-color);
+} */
 
 #img_2:checked~.slider_2 {
     margin-left: -100%;
 }
 
 #img_2:checked~#text_2 {
-    visibility: visible;
+    /* visibility: hidden; */
+}
+
+#img_2:checked~.footer .buttons #btn_2 .btn2 {
+    background-color: var(--body_background-color);
+    border: 0.2rem solid var(--button_background-color);
 }
 
 #img_3:checked~.slider_3 {
@@ -115,9 +158,17 @@ body {
 }
 
 #img_4:checked~.slider_4 {
-    margin-left: -300px;
+    margin-left: -300%;
 }
 
+#img_5:checked~.slider_5 {
+    margin-left: -400%;
+}
+
+.btn:active {
+    background-color: var(--body_background-color);
+    border: 0.2rem solid var(--button_background-color); 
+}
 
 
 .active {
@@ -130,7 +181,59 @@ body {
     border: 4px solid var(--button-hover_background-color);
 }
 
-.button:active {
-    background-color: var(--button-hover_background-color);
-    border: 4px solid var(--button_background-color);
+.btn:active {
+    /* background-color: var(--button-hover_background-color);
+    border: 4px solid var(--button_background-color); */
+}
+
+@media screen and (max-width: 840px) {
+
+    .images {
+        margin-bottom: 2rem;
+    }
+
+    .footer {
+        display: flex;
+        flex-wrap: wrap-reverse;
+    }
+
+    .buttons .label {
+        padding: 0 0.6rem;
+    }
+
+    .text {
+        margin-top: 2rem;
+    }
+
+}
+
+@media screen and (max-width: 375px) {
+
+    .images {
+        margin-bottom: 2rem;
+    }
+
+    .footer {
+        display: flex;
+        flex-wrap: wrap-reverse;
+    }
+
+    .buttons {
+        display: flex;
+        justify-content: center;
+        margin-left: 0rem;
+    }
+
+    .buttons .label {
+        padding: 0 0.6rem;
+    }
+
+    .btn {
+        padding: 0.5rem;
+    }
+
+    .text {
+        margin-top: 2rem;
+    }
+
 }
