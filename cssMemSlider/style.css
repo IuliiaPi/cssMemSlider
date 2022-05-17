@@ -21,7 +21,7 @@ body {
     font-style: normal;
     font-weight: 400;
     font-size: 1.2rem;
-    line-height: 130%;
+    line-height: 100%;
     letter-spacing: 0.06em;
     color: #afcbe3;
     background-color: var(--body_background-color);
@@ -33,17 +33,10 @@ body {
 .container {
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
-    /* align-items: center; */
-
     position: relative;
     width: 60%;
     overflow: hidden;
-
-    /* max-width: 1200px; */
     margin: 0 auto;
-    /* padding: 0px 15px; */
-
     margin: 2rem;
 }
 
@@ -75,12 +68,16 @@ body {
 }
 
 .buttons .label {
+    height: 4rem;
     display: block;
     padding: 0 0.8rem;
     cursor: pointer;
     transition: all 0.3s ease;
     margin: 0 0.1rem;
-    /* background-color: var(--button_background-color); */
+}
+
+.buttons .label:hover {
+    background-color: transparent;
 }
 
 .btn {
@@ -88,42 +85,60 @@ body {
     padding: 0.6rem;
     border-radius: 50%;
     border: 0.2rem solid var(--button_background-color);
-    /* border: 0.2rem solid transparent; */
     cursor: pointer;
     transition: all 0.3s ease;
-
     background-color: var(--button_background-color);
 }
 
 .btn:hover {
     background-color: var(--button-hover_background-color);
-    /* border: 0.2rem solid transparent; */
     border: 0.2rem solid var(--button-hover_background-color);
 }
 
-.buttons .label:hover~.btn:hover {
-
-    /* background-color: transparent; */
-    /* border: 0.2rem solid transparent; */
-    /* background-color: var(--button-hover_background-color); */
-    /* border: 0.2rem solid transparent; */
-    /* border: 0.2rem solid var(--button-hover_background-color); */
+.btn:active {
+    background-color: var(--body_background-color);
+    border: 0.2rem solid var(--button_background-color);
 }
 
-.text {
-    visibility: hidden;
+.slider_text {
+    display: none;
+    user-select: auto;
 }
 
+#img_1:checked~.footer .text #text_1,
 #text_1 {
-    visibility: visible;
+    display: inline-block;
+    animation: show 0.3s ease-in-out;
+}
+
+#img_2:checked~.footer .text .slider_2 {
+    display: inline-block;
+    animation: show 0.3s ease-in-out;
+}
+
+#img_3:checked~.footer .text #text_3 {
+    display: inline-block;
+    animation: show 0.3s ease-in-out;
+}
+
+#img_4:checked~.footer .text #text_4 {
+    display: inline-block;
+    animation: show 0.3s ease-in-out;
+}
+
+#img_5:checked~.footer .text #text_5 {
+    display: inline-block;
+    animation: show 0.3s ease-in-out;
 }
 
 .btn1 {
     background-color: var(--body_background-color);
-    border: 0.2rem solid var(--button_background-color);  
+    border: 0.2rem solid var(--button_background-color);
 }
-#text_2 {
-    /* visibility: hidden; */
+
+.btn1:hover {
+    background-color: var(--body_background-color);
+    border: 0.2rem solid var(--button-hover_background-color);
 }
 
 #img_1:checked~.slider_1 {
@@ -135,17 +150,8 @@ body {
     border: 0.2rem solid var(--button_background-color);
 }
 
-/* .btn1:checked {
-    background-color: var(--body_background-color);
-    border: 0.2rem solid var(--button_background-color);
-} */
-
 #img_2:checked~.slider_2 {
     margin-left: -100%;
-}
-
-#img_2:checked~#text_2 {
-    /* visibility: hidden; */
 }
 
 #img_2:checked~.footer .buttons #btn_2 .btn2 {
@@ -157,36 +163,30 @@ body {
     margin-left: -200%;
 }
 
+#img_3:checked~.footer .buttons #btn_3 .btn3 {
+    background-color: var(--body_background-color);
+    border: 0.2rem solid var(--button_background-color);
+}
+
 #img_4:checked~.slider_4 {
     margin-left: -300%;
+}
+
+#img_4:checked~.footer .buttons #btn_4 .btn4 {
+    background-color: var(--body_background-color);
+    border: 0.2rem solid var(--button_background-color);
 }
 
 #img_5:checked~.slider_5 {
     margin-left: -400%;
 }
 
-.btn:active {
+#img_5:checked~.footer .buttons #btn_5 .btn5 {
     background-color: var(--body_background-color);
-    border: 0.2rem solid var(--button_background-color); 
+    border: 0.2rem solid var(--button_background-color);
 }
 
-
-.active {
-    background-color: var(--body_background-color);
-    border: 4px solid var(--button_background-color);
-}
-
-.active:hover {
-    background-color: var(--body_background-color);
-    border: 4px solid var(--button-hover_background-color);
-}
-
-.btn:active {
-    /* background-color: var(--button-hover_background-color);
-    border: 4px solid var(--button_background-color); */
-}
-
-@media screen and (max-width: 840px) {
+@media screen and (max-width: 970px) {
 
     .images {
         margin-bottom: 2rem;
@@ -198,11 +198,13 @@ body {
     }
 
     .buttons .label {
+        height: 3rem;
         padding: 0 0.6rem;
     }
 
     .text {
-        margin-top: 2rem;
+        margin-top: 0.5rem;
+        font-size: 1.0rem;
     }
 
 }
@@ -221,10 +223,10 @@ body {
     .buttons {
         display: flex;
         justify-content: center;
-        margin-left: 0rem;
     }
 
     .buttons .label {
+        height: 3rem;
         padding: 0 0.6rem;
     }
 
@@ -233,7 +235,8 @@ body {
     }
 
     .text {
-        margin-top: 2rem;
+        margin-top: 0.5rem;
+        font-size: 1.0rem;
     }
 
 }
