@@ -1,4 +1,4 @@
-# cssMemSlider
+# cssMemeSlider
 
 https://github.com/IuliiaPi/cssMemSlider/pull/1
 
